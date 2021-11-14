@@ -1,4 +1,4 @@
-This my first admin dashboard demo application. Focused on front-end design.
+This my first admin dashboard demo application. This one is not responsive. 
 
 https://kochemre.github.io/admin-dashboard-demo/
 
