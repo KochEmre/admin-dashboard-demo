@@ -216,7 +216,7 @@ const Dashboard = () => {
                             />
                         </div>
                         <div className="card__footer">
-                            <Link to='/'>view all</Link>
+                            <Link to='/admin-dashboard-demo/'>view all</Link>
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@ const Dashboard = () => {
                             />
                         </div>
                         <div className="card__footer">
-                            <Link to='/'>view all</Link>
+                            <Link to='/admin-dashboard-demo/'>view all</Link>
                         </div>
                     </div>
                 </div>
