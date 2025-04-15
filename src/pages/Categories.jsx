@@ -25,10 +25,10 @@ const renderCategoryBody = (item, index) => (
         </td>
         <td>
             <div className="action-buttons">
-                <button className="btn-edit">
+                <button className="btn-edit" title="Edit Category" aria-label="Edit Category">
                     <i className='bx bx-edit'></i>
                 </button>
-                <button className="btn-delete">
+                <button className="btn-delete" title="Delete Category" aria-label="Delete Category">
                     <i className='bx bx-trash'></i>
                 </button>
             </div>
@@ -99,7 +99,7 @@ const Categories = () => {
                     <div className="card">
                         <div className="card__header">
                             <h3>Category Management</h3>
-                            <button className="btn-add">
+                            <button className="btn-add" title="Add Category" aria-label="Add Category">
                                 <i className='bx bx-plus'></i> Add Category
                             </button>
                         </div>

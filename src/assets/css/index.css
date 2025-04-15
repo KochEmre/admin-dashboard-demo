@@ -90,6 +90,10 @@ button {
     border: 0;
     outline: 0;
     color: var(--txt-color);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 ul {

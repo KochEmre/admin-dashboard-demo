@@ -32,7 +32,7 @@ const renderOrderBody = (item, index) => (
             <Badge type={orderStatus[item.status]} content={item.status}/>
         </td>
         <td>
-            <button className="btn-view">
+            <button className="btn-view" title="View Order Details" aria-label="View Order Details">
                 <i className='bx bx-detail'></i>
             </button>
         </td>

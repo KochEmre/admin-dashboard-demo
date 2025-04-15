@@ -103,7 +103,7 @@ const Products = () => {
                     <div className="card">
                         <div className="card__header">
                             <h3>Product List</h3>
-                            <button className="btn-add">
+                            <button className="btn-add" title="Add Product" aria-label="Add Product">
                                 <i className='bx bx-plus'></i> Add Product
                             </button>
                         </div>

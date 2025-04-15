@@ -35,10 +35,10 @@ const renderInventoryBody = (item, index) => (
         </td>
         <td>
             <div className="action-buttons">
-                <button className="btn-edit">
+                <button className="btn-edit" title="Edit Item" aria-label="Edit Item">
                     <i className='bx bx-edit'></i>
                 </button>
-                <button className="btn-view">
+                <button className="btn-view" title="View Details" aria-label="View Details">
                     <i className='bx bx-detail'></i>
                 </button>
             </div>
@@ -153,13 +153,13 @@ const Inventory = () => {
                         <div className="card__header">
                             <h3>Inventory Status</h3>
                             <div>
-                                <button className="btn-add">
+                                <button className="btn-add" title="Add Product" aria-label="Add Product">
                                     <i className='bx bx-plus'></i> Add Product
                                 </button>
-                                <button className="btn-add" style={{marginLeft: '10px', backgroundColor: 'var(--main-color-green)'}}>
+                                <button className="btn-add" style={{marginLeft: '10px', backgroundColor: 'var(--main-color-green)'}} title="Import Products" aria-label="Import Products">
                                     <i className='bx bx-import'></i> Import
                                 </button>
-                                <button className="btn-add" style={{marginLeft: '10px', backgroundColor: 'var(--main-color-blue)'}}>
+                                <button className="btn-add" style={{marginLeft: '10px', backgroundColor: 'var(--main-color-blue)'}} title="Export Products" aria-label="Export Products">
                                     <i className='bx bx-export'></i> Export
                                 </button>
                             </div>

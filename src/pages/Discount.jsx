@@ -35,10 +35,10 @@ const renderDiscountBody = (item, index) => (
         </td>
         <td>
             <div className="action-buttons">
-                <button className="btn-edit">
+                <button className="btn-edit" title="Edit Discount" aria-label="Edit Discount">
                     <i className='bx bx-edit'></i>
                 </button>
-                <button className="btn-delete">
+                <button className="btn-delete" title="Delete Discount" aria-label="Delete Discount">
                     <i className='bx bx-trash'></i>
                 </button>
             </div>
@@ -114,7 +114,7 @@ const Discount = () => {
                     <div className="card">
                         <div className="card__header">
                             <h3>Discount Management</h3>
-                            <button className="btn-add">
+                            <button className="btn-add" title="Add Discount" aria-label="Add Discount">
                                 <i className='bx bx-plus'></i> Add Discount
                             </button>
                         </div>

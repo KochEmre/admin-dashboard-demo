@@ -69,13 +69,13 @@ const Sidebar = props => {
 
     return (
         <>
-            <div className="sidebar__toggle" onClick={toggleSidebar}>
+            <div className="sidebar__toggle" onClick={toggleSidebar} title="Toggle Sidebar" aria-label="Toggle Sidebar">
                 <i className='bx bx-menu'></i>
             </div>
             <div ref={sidebarRef} className={`sidebar ${sidebarOpen ? 'active' : ''}`}>
                 <div className="sidebar__logo">
                     <img className="deneme" src={themeReducer.mode === 'theme-mode-dark' ? logo_white:logo} alt="company logo" />
-                    <div className="sidebar__close" onClick={closeSidebar}>
+                    <div className="sidebar__close" onClick={closeSidebar} title="Close Sidebar" aria-label="Close Sidebar">
                         <i className='bx bx-x'></i>
                     </div>
                 </div>

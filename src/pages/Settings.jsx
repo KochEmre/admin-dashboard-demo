@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 const Settings = () => {
     const themeReducer = useSelector(state => state.ThemeReducer)
-    
+
     const [formData, setFormData] = useState({
         siteName: 'Admin Dashboard',
         siteDescription: 'Powerful admin dashboard template',
@@ -46,8 +46,8 @@ const Settings = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label>Site Name</label>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="siteName"
                                         value={formData.siteName}
                                         onChange={handleChange}
@@ -56,7 +56,7 @@ const Settings = () => {
                                 </div>
                                 <div className="form-group">
                                     <label>Site Description</label>
-                                    <textarea 
+                                    <textarea
                                         name="siteDescription"
                                         value={formData.siteDescription}
                                         onChange={handleChange}
@@ -66,22 +66,22 @@ const Settings = () => {
                                 </div>
                                 <div className="form-group">
                                     <label>Admin Email</label>
-                                    <input 
-                                        type="email" 
+                                    <input
+                                        type="email"
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         className="form-control"
                                     />
                                 </div>
-                                
+
                                 <div className="card__header">
                                     <h3>Notification Settings</h3>
                                 </div>
-                                
+
                                 <div className="form-check">
-                                    <input 
-                                        type="checkbox" 
+                                    <input
+                                        type="checkbox"
                                         name="notificationsEnabled"
                                         checked={formData.notificationsEnabled}
                                         onChange={handleChange}
@@ -92,10 +92,10 @@ const Settings = () => {
                                         Enable Notifications
                                     </label>
                                 </div>
-                                
+
                                 <div className="form-check">
-                                    <input 
-                                        type="checkbox" 
+                                    <input
+                                        type="checkbox"
                                         name="emailNotifications"
                                         checked={formData.emailNotifications}
                                         onChange={handleChange}
@@ -106,10 +106,10 @@ const Settings = () => {
                                         Email Notifications
                                     </label>
                                 </div>
-                                
+
                                 <div className="form-check">
-                                    <input 
-                                        type="checkbox" 
+                                    <input
+                                        type="checkbox"
                                         name="pushNotifications"
                                         checked={formData.pushNotifications}
                                         onChange={handleChange}
@@ -120,14 +120,14 @@ const Settings = () => {
                                         Push Notifications
                                     </label>
                                 </div>
-                                
+
                                 <div className="card__header">
                                     <h3>Appearance Settings</h3>
                                 </div>
-                                
+
                                 <div className="form-check">
-                                    <input 
-                                        type="checkbox" 
+                                    <input
+                                        type="checkbox"
                                         name="darkModeDefault"
                                         checked={formData.darkModeDefault}
                                         onChange={handleChange}
@@ -138,10 +138,10 @@ const Settings = () => {
                                         Use Dark Mode by Default
                                     </label>
                                 </div>
-                                
+
                                 <div className="form-group">
                                     <label>Language</label>
-                                    <select 
+                                    <select
                                         name="language"
                                         value={formData.language}
                                         onChange={handleChange}
@@ -154,10 +154,10 @@ const Settings = () => {
                                         <option value="tr">Turkish</option>
                                     </select>
                                 </div>
-                                
+
                                 <div className="form-group">
                                     <label>Timezone</label>
-                                    <select 
+                                    <select
                                         name="timezone"
                                         value={formData.timezone}
                                         onChange={handleChange}
@@ -190,10 +190,10 @@ const Settings = () => {
                                         <option value="UTC+12">UTC+12</option>
                                     </select>
                                 </div>
-                                
+
                                 <div className="form-group">
                                     <label>Currency</label>
-                                    <select 
+                                    <select
                                         name="currency"
                                         value={formData.currency}
                                         onChange={handleChange}
@@ -206,8 +206,8 @@ const Settings = () => {
                                         <option value="TRY">TRY (₺)</option>
                                     </select>
                                 </div>
-                                
-                                <button type="submit" className="btn-primary">
+
+                                <button type="submit" className="btn-primary" title="Save Settings" aria-label="Save Settings">
                                     Save Settings
                                 </button>
                             </form>
