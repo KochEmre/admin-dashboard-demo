@@ -40,6 +40,28 @@
     --transition-cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Responsive variables */
+@media only screen and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 250px;
+        --topnav-height: 90px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --sidebar-width: 200px;
+        --topnav-height: 70px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    :root {
+        --sidebar-width: 0px;
+        --border-radius: 10px;
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -88,12 +110,36 @@ input:focus {
     text-transform: capitalize;
 }
 
+@media only screen and (max-width: 768px) {
+    .page-header {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .page-header {
+        margin-bottom: 20px;
+    }
+}
+
 .card {
     padding: 30px;
     margin-bottom: 30px;
     background-color: var(--main-bg);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card {
+        padding: 15px;
+    }
 }
 
 .full-height {
@@ -150,4 +196,79 @@ input:focus {
 .orange-color {
     background-color: var(--main-color-orange);
     color: #fff;
+}
+
+/* Responsive chart styles */
+.responsive-chart {
+    width: 100%;
+    overflow: hidden;
+}
+
+.chart-card {
+    padding-bottom: 40px; /* Extra padding for legend at bottom */
+}
+
+@media only screen and (max-width: 768px) {
+    .responsive-chart .apexcharts-legend {
+        position: relative !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        padding: 5px !important;
+    }
+
+    .responsive-chart .apexcharts-legend-series {
+        margin-right: 10px !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive-chart .apexcharts-legend {
+        padding: 3px !important;
+    }
+
+    .responsive-chart .apexcharts-legend-series {
+        margin-right: 5px !important;
+        margin-bottom: 3px !important;
+    }
+
+    .responsive-chart .apexcharts-legend-text {
+        font-size: 10px !important;
+        margin-left: 3px !important;
+        white-space: normal !important;
+        width: auto !important;
+        max-width: none !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+    }
+
+    .chart-card {
+        padding-bottom: 70px; /* More padding for mobile */
+        min-height: 350px; /* Minimum height to ensure chart is visible */
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    /* Improve legend container */
+    .responsive-chart .apexcharts-legend {
+        overflow: visible !important;
+        height: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Ensure x-axis labels are visible */
+    .responsive-chart .apexcharts-xaxis-texts-g text {
+        text-anchor: end !important;
+    }
+
+    /* Ensure y-axis labels are visible */
+    .responsive-chart .apexcharts-yaxis-texts-g text {
+        text-anchor: end !important;
+    }
 }

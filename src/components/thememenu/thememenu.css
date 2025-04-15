@@ -9,6 +9,21 @@
     background-color: var(--main-bg);
     box-shadow: var(--box-shadow);
     transition: right 0.5s var(--transition-cubic);
+    overflow-y: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .theme-menu {
+        width: 250px;
+        right: -250px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .theme-menu {
+        width: 100%;
+        right: -100%;
+    }
 }
 
 .theme-menu.active {

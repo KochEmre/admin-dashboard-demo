@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -25,7 +25,10 @@ const chartOptions = {
     options: {
         color: ['#6ab04c', '#2980b9'],
         chart: {
-            background: 'transparent'
+            background: 'transparent',
+            toolbar: {
+                show: false
+            }
         },
         dataLabels: {
             enabled: false
@@ -34,11 +37,88 @@ const chartOptions = {
             curve: 'smooth'
         },
         xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            labels: {
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'Roboto, sans-serif'
+                },
+                rotate: 0,
+                trim: false,
+                hideOverlappingLabels: false
+            }
         },
         legend: {
-            position: 'top'
+            position: 'top',
+            horizontalAlign: 'center',
+            fontSize: '14px',
+            fontFamily: 'Roboto, sans-serif',
+            itemMargin: {
+                horizontal: 10,
+                vertical: 5
+            },
+            onItemClick: {
+                toggleDataSeries: true
+            },
+            formatter: function(seriesName, opts) {
+                // Mobil görünümde legend metinlerini kısaltmayalım
+                return seriesName;
+            }
         },
+        responsive: [{
+            breakpoint: 768,
+            options: {
+                legend: {
+                    position: 'bottom',
+                    offsetY: 0,
+                    height: 50
+                },
+                xaxis: {
+                    labels: {
+                        style: {
+                            fontSize: '10px'
+                        },
+                        rotate: -45,
+                        offsetY: 0
+                    }
+                }
+            }
+        }, {
+            breakpoint: 500,
+            options: {
+                legend: {
+                    position: 'bottom',
+                    offsetX: 0,
+                    offsetY: 0,
+                    fontSize: '12px',
+                    itemMargin: {
+                        horizontal: 8,
+                        vertical: 5
+                    },
+                    containerMargin: {
+                        top: 10,
+                        bottom: 10
+                    }
+                },
+                xaxis: {
+                    labels: {
+                        style: {
+                            fontSize: '8px'
+                        },
+                        rotate: -45,
+                        offsetY: 0
+                    }
+                },
+                yaxis: {
+                    labels: {
+                        style: {
+                            fontSize: '8px'
+                        },
+                        offsetX: -5
+                    }
+                }
+            }
+        }],
         grid: {
             show: false
         }
@@ -170,11 +250,11 @@ const Dashboard = () => {
         <div>
             <h2 className="page-header">Dashboard</h2>
             <div className="row">
-                <div className="col-6">
+                <div className="col-6 col-md-6 col-sm-12">
                     <div className="row">
                         {
                             statusCards.map((item, index) => (
-                                <div className="col-6" key={index}>
+                                <div className="col-6 col-md-6 col-sm-6" key={index}>
                                     <StatusCard
                                         icon={item.icon}
                                         count={item.count}
@@ -185,8 +265,8 @@ const Dashboard = () => {
                         }
                     </div>
                 </div>
-                <div className="col-6">
-                    <div className="card full-height">
+                <div className="col-6 col-md-6 col-sm-12">
+                    <div className="card full-height chart-card">
                         {/* chart */}
                         <Chart
                             options={themeReducer === 'theme-mode-dark' ? {
@@ -199,10 +279,12 @@ const Dashboard = () => {
                             series={chartOptions.series}
                             type='line'
                             height='100%'
+                            width='100%'
+                            className="responsive-chart"
                         />
                     </div>
                 </div>
-                <div className="col-4">
+                <div className="col-4 col-md-12 col-sm-12">
                     <div className="card">
                         <div className="card__header">
                             <h3>top customers</h3>
@@ -220,7 +302,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-8">
+                <div className="col-8 col-md-12 col-sm-12">
                     <div className="card">
                         <div className="card__header">
                             <h3>latest orders</h3>

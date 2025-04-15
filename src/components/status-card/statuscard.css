@@ -12,6 +12,18 @@
     margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 768px) {
+    .status-card {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .status-card {
+        padding: 15px;
+    }
+}
+
 .status-card__icon {
     width: 30%;
     height: 100%;
@@ -20,6 +32,19 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .status-card__icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .status-card__icon {
+        font-size: 2rem;
+        width: 40%;
+    }
 }
 
 .status-card__info {
@@ -32,6 +57,24 @@
 .status-card__info > h4 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .status-card__info > h4 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .status-card__info > h4 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .status-card__info > span {
+        font-size: 0.9rem;
+    }
 }
 
 .status-card::before {

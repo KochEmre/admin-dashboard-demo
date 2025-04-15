@@ -6,7 +6,7 @@ import Sidebar from '../sidebar/Sidebar'
 import TopNav from '../topnav/TopNav'
 import Routes from '../Routes'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -29,20 +29,27 @@ const Layout = () => {
     }, [dispatch])
 
     return (
-        <BrowserRouter>
-            <Route render={(props) => (
-                <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
-                    <Sidebar {...props}/>
-                    <div className="layout__content">
-                        <TopNav/>
-                        <div className="layout__content-main">
-                            <Routes/>
-                        </div>
-                    </div>
-                </div>
-            )}/>
+        <BrowserRouter future={{ v7_relativeSplatPath: true }}>
+            <AppContent themeReducer={themeReducer} />
         </BrowserRouter>
     )
+}
+
+// Separate component to access useLocation hook
+const AppContent = ({ themeReducer }) => {
+    const location = useLocation();
+
+    return (
+        <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
+            <Sidebar location={location}/>
+            <div className="layout__content">
+                <TopNav/>
+                <div className="layout__content-main">
+                    <Routes/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Layout

@@ -35,7 +35,7 @@ const Customers = () => {
                 customers
             </h2>
             <div className="row">
-                <div className="col-12">
+                <div className="col-12 col-md-12 col-sm-12">
                     <div className="card">
                         <div className="card__body">
                             <Table
